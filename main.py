@@ -3,22 +3,20 @@ a = []
 print("enter n number 2 to 100")
 n = int(input())
 print("enter k number 0 to 100")
-k = int(input())
+l = int(input())
 print("enter number 1 ")
 print("1.filling with file")
 choice = int(input())
 
-match choice:    # инициализация матрицы а
-    case 1:
-        file = open('massA.txt', 'r')
-        for i in range(n):
-            st = file.readline()
-            a.append([int(x) for x in st.split()])
-        print("A")
-        for i in a:
-            print(i)
-    case _:
-        print("incorrect input,please try again")
+    # инициализация матрицы а
+file = open('massA.txt', 'r')
+for i in range(n):
+    st = file.readline()
+    a.append([int(x) for x in st.split()])
+print("A")
+for i in a:
+    print(i)
+
 
 print("F")
 f = [[0]*n for _ in range(n)]
@@ -119,7 +117,7 @@ x= [[0]*n for _ in range(n)]
 
 for i in range(n):            #k*c
     for j in range(n):
-        c[i][j]=c[i][j]*k
+        c[i][j]*=l
 
 print("c")
 for i in c:
@@ -136,7 +134,7 @@ for i in at:
 atk=[[0]*n for _ in range(n)]
 for i in range(n): #at*k
     for j in range(n):
-        atk[i][j]=at[i][j]*k
+        atk[i][j]=at[i][j]*l
 print("atk")
 for i in atk:
     print(i)
