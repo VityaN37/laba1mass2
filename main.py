@@ -1,21 +1,34 @@
+import random
 a = []
 
-print("enter n number 2 to 100")
+print("enter n number 3 to 100")
 n = int(input())
 print("enter k number 0 to 100")
 l = int(input())
-print("enter number 1 ")
+print("enter number 1 or 2 ")
 print("1.filling with file")
+print("2.filling random")
 choice = int(input())
 
-    # инициализация матрицы а
-file = open('massA.txt', 'r')
-for i in range(n):
-    st = file.readline()
+# инициализация матрицы а
+if choice==1:
+    file = open('massA.txt', 'r')
+    for i in range(n):
+        st = file.readline()
     a.append([int(x) for x in st.split()])
-print("A")
-for i in a:
-    print(i)
+
+    print("A")
+    for i in a:
+        print(i)
+
+elif choice==2:
+    a=[[random.randint(-10,10) for _ in range(n)] for _ in range(n)]
+    print("A")
+    for i in a:
+        print(i)
+else:
+    print("incorrect input")
+
 
 
 print("F")
