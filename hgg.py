@@ -1,11 +1,14 @@
-n=2
-a=[[0]*n for _ in range(n)]
-k = int(input())
-d=[[2,2],
-   [2,2]]
-for i in range(n): #a*f
-    for j in range(n):
-       a[i][j]=d[i][j]*k
+n=6
+a=[]
+file = open('massA.txt', 'r')
+for i in range(n):
+    st = file.readline()
+    a.append([int(x) for x in st.split()])
 
+print("A")
 for i in a:
     print(i)
+
+for i in range(n):
+    for j in range(i):
+        print(i,j)
